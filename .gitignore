@@ -1,0 +1,17 @@
+# Ignore compiled files
+/build/
+target/
+*.class
+
+# Ignore IDE folders
+/.idea/
+/.settings/
+/.project
+/.classpath
+
+# Ignore Tomcat/Server config
+/Servers/
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
