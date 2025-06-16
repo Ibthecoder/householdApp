@@ -21,7 +21,11 @@ public class LoginServlet extends HttpServlet {
        
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	    String email = request.getParameter("email");
+	    
+		request.setCharacterEncoding("UTF-8");
+
+		
+		String email = request.getParameter("email");
 	    String password = request.getParameter("password");
 	    
 	    response.setContentType("text/html");
@@ -40,7 +44,8 @@ public class LoginServlet extends HttpServlet {
 	    		// Successful login
 	    		HttpSession session = request.getSession();
 	    		session.setAttribute("username", result.getString("UserName"));
-	    		response.sendRedirect("dashbord.jsp");
+	    		session.setAttribute("userId", result.getLong("id"));
+	    		response.sendRedirect("DashboardServlet");
 	    	} else {
 	    		// failed login:
 	    		request.setAttribute("error", "Invalid email or password");

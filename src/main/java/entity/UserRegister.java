@@ -49,10 +49,6 @@ public class UserRegister {
 		return "UserRegister [id=" + id + ", UserName=" + UserName + ", email=" + email + ", password=" + password
 				+ "]";
 	}
-	
-	
-	
-	
-	
+		
 
 }
